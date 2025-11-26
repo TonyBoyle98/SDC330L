@@ -1,57 +1,36 @@
-/**************************************** 
- * Name: Tony Boyle Jr 
- * Date: 11/25/2025 
- * Main Program – Week 3 Demonstration 
- *********************/ 
+/**************************
+ * Tony Boyle Jr
+ * 11/26/2025
+ * Assignment: SDC330 Performance Assessment - Abstraction
+ *****************************/
 
-public class App { 
+public class App {
+    public static void main(String[] args) {
+        // Print header
+        System.out.println("Your Name - Week 3 Abstraction Performance Assessment");
+        
+        // Create instances of each concrete class
+        CardGame cardGame = new CardGame("Poker", 4, 5);
+        DiceGame diceGame = new DiceGame("Yahtzee", 2, 6);
+        SpinnerGame spinnerGame = new SpinnerGame("Spin the Wheel", 3, 10);
 
-    public static void main(String[] args) { 
+        // Print game information
+        System.out.println("\nCard Game Information:");
+        System.out.println(cardGame.startGame());
+        System.out.println(cardGame.startTurn());
+        System.out.println(cardGame.endTurn());
+        System.out.println(cardGame.toString());
 
-        System.out.println("=== Project Week 3 ==="); 
-        System.out.println("Assignment: Abstraction, Constructors, Access Specifiers"); 
-        System.out.println("Student: Tony Boyle Jr\n"); 
-        System.out.println( "Welcome! This application demonstrates abstract classes, constructors, and access control.\n"); 
-        Rolodex rolodex = new Rolodex(); 
+        System.out.println("\nDice Game Information:");
+        System.out.println(diceGame.startGame());
+        System.out.println(diceGame.startTurn());
+        System.out.println(diceGame.endTurn());
+        System.out.println(diceGame.toString());
 
-        // Create contacts using constructors 
-        BusinessContact b1 = new BusinessContact("Sarah", 
-        "Kent", 
-        "555-1000", 
-        "s.kent@corp.com", 
-        "Kent Corp", 
-        "Manager"); 
-
-        FamilyContact f1 = new FamilyContact("Mike", 
-        "Andrews", 
-        "555-2222",  
-        "m.andrews@email.com", 
-        "Cousin"); 
-
-        FriendContact fr1 = new FriendContact("Lily", 
-        "Mason", 
-        "555-3333",  
-        "lily@gmail.com", 
-        "Lil", 
-        "Met at college"); 
-
-        // Add to Rolodex 
-        rolodex.addContact(b1); 
-        rolodex.addContact(f1); 
-        rolodex.addContact(fr1); 
-
-        // Display 
-        System.out.println("Displaying all contacts:\n"); 
-        rolodex.displayAllContacts(); 
-
-        // Demonstrate abstraction + polymorphism 
-        System.out.println("Updating Lily's phone number...\n"); 
-        fr1.updateContact("phone", "555-9999"); 
-        System.out.println("Contacts after update:\n"); 
-        rolodex.displayAllContacts(); 
-        System.out.println("Contacts with last name starting with 'M':\n"); 
-        rolodex.displayContactsByLetter('M'); 
-
-    } 
-
-} 
+        System.out.println("\nSpinner Game Information:");
+        System.out.println(spinnerGame.startGame());
+        System.out.println(spinnerGame.startTurn());
+        System.out.println(spinnerGame.endTurn());
+        System.out.println(spinnerGame.toString());
+    }
+}
