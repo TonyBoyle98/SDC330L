@@ -1,25 +1,61 @@
-/**********************
-Name: Tony Boyle Jr
-Date: 11/17/2025
-Assignment: SDC330L Project
-*******/
+/******************** 
+ * Name: Tony Boyle Jr 
+ * Date: 11/25/2025 
+ * Business Contact Class 
+ *********************/ 
 
-public class BusinessContact extends Contact {
+public class BusinessContact extends Contact { 
 
-    private String companyName;
+    private String companyName; 
+    private String jobTitle; 
 
-    public BusinessContact(String contactID, String name, Address address, 
-                           String phone, String email, String companyName) {
-        super(contactID, name, address, phone, email);
-        this.companyName = companyName;
-    }
+ 
 
-    @Override
-    public String getContactType() {
-        return "Business";
-    }
+    // Main constructor 
+    public BusinessContact(String firstName, String lastName, String phone, String email, 
 
-    public String getCompanyName() {
-        return companyName;
-    }
-}
+        String company, String jobTitle) { 
+
+        super(firstName, lastName, phone, email); 
+
+        this.companyName = company; 
+
+        this.jobTitle = jobTitle; 
+
+    } 
+
+ 
+
+    // Overloaded constructor 
+
+    public BusinessContact(String firstName, String lastName) { 
+
+        super(firstName, lastName, "", ""); 
+
+        this.companyName = "Unknown"; 
+
+        this.jobTitle = "Unknown"; 
+
+    } 
+
+ 
+
+    @Override 
+
+    public void displayContact() { 
+
+        System.out.println("=== Business Contact ==="); 
+
+        System.out.println("Name: " + firstName + " " + lastName); 
+
+        System.out.println("Phone: " + phoneNumber); 
+
+        System.out.println("Email: " + email); 
+
+        System.out.println("Company: " + companyName); 
+
+        System.out.println("Job Title: " + jobTitle); 
+
+    } 
+
+} 
